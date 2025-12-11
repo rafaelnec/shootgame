@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1642804485128896433}
   - component: {fileID: 8967747401517207358}
   - component: {fileID: 7758504506149502798}
+  - component: {fileID: 2605383570246382057}
   m_Layer: 0
   m_Name: EnemyExploding
   m_TagString: Enemy
@@ -183,3 +184,15 @@ MonoBehaviour:
   shootTimeRate: 1
   shootSpeed: 10
   weapon: {fileID: 0}
+--- !u!114 &2605383570246382057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9096132580188936367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3701995ca5496c489abc268164c3c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KeepObjectOnScreen

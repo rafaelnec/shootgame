@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8774511528123921634}
   - component: {fileID: 4691454452695635429}
   - component: {fileID: 2485222911885549295}
+  - component: {fileID: 451800284227136155}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -179,10 +180,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37020812652f7d1418d33cc5f1ec1a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  _rb: {fileID: 8774511528123921634}
-  weapon: {fileID: 3420091048767099413}
-  _speed: 10
   moveSpeed: 3
+  damage: 0
+  shootTimeRate: 1
+  shootSpeed: 5
+  weapon: {fileID: 3420091048767099413}
+--- !u!114 &451800284227136155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897230725070103953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3701995ca5496c489abc268164c3c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KeepObjectOnScreen
 --- !u!1001 &7889092255436440885
 PrefabInstance:
   m_ObjectHideFlags: 0
