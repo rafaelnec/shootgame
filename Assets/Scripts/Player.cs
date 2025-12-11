@@ -66,6 +66,7 @@ public class Player : PlayableObject
         {
             float damage = other.gameObject.GetComponent<Bullet>().GetBulletDamage();  
             TakeDamage(damage);
+            Destroy(other.gameObject);
             Debug.Log("Playable Object Hit by Enemy Bullet");
         }
 
