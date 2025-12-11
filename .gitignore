@@ -1,0 +1,24 @@
+# Unity
+Temp/
+Library/
+Obj/
+Builds/
+*.unityproj
+*.sln
+*.user
+*.pidb
+*.suo
+*.pdb
+*.opendb
+*.DS_Store
+*.orig
+*.meta.orig
+
+# Visual Studio / Rider
+.vs/
+.idea/
+
+# Custom additions (example)
+MyCustomLogs/
+Recordings/
+Logs/
