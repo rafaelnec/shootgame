@@ -12,6 +12,8 @@ public class Player : PlayableObject
 
     public TextMeshProUGUI healthText;
 
+    public GameObject gameOverScreen;
+
     void Start()
     {
         health.AddHealth(100);
@@ -45,19 +47,22 @@ public class Player : PlayableObject
 
     public override void Knockout()
     {
-        // Bring up the game over screen
-        Debug.Log($"Game over!");
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void TakeDamage(float damage)
     {
         health.DeductHealth(damage);
         SetHealthText();
+        if (health.GetHealth() <= 0) Knockout();
     }
 
     private void SetHealthText()
     {
-        healthText.text = health.GetHealth().ToString();
+        float helth = health.GetHealth();
+        helth = helth < 0 ? 0 : helth;
+        healthText.text = helth.ToString();
     }
 
      void OnTriggerEnter2D(Collider2D other)

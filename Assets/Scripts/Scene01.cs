@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scene01 : MonoBehaviour
 {
@@ -79,5 +80,11 @@ public class Scene01 : MonoBehaviour
             yield return new WaitForSeconds(1.0f / enemySpawnRate);
             CreateEnemy();
         }
+    }
+
+    public void NewGameButtonOnClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
 }
