@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class PlayableObject : MonoBehaviour, IDamageable
@@ -15,6 +17,9 @@ public abstract class PlayableObject : MonoBehaviour, IDamageable
 
     [SerializeField]
     protected float _speed;
+
+    protected float powerGunCooldown = 0f;
+    protected float powerGunCooldownDuration = 0.2f;
 
     public PlayableObject() { }
     public PlayableObject(float maxHealth)
@@ -78,5 +83,42 @@ public abstract class PlayableObject : MonoBehaviour, IDamageable
             Debug.Log("Playable Object Hit by Enemy Bullet");
         }
 
+    }
+
+    public virtual void ShootNuke()
+    {
+        Debug.Log("Nuke Activated!");
+        Collectables[] allObjects = FindObjectsByType<Collectables>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        Enemy[] allEnemies = FindObjectsByType<Enemy>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        Bullet[] allBullets = FindObjectsByType<Bullet>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        foreach (Enemy enemy in allEnemies)
+        {
+            Destroy(enemy.gameObject);
+        }
+        foreach (Collectables collectable in allObjects)
+        {
+            Destroy(collectable.gameObject);
+        }
+        foreach (Bullet bullet in allBullets)
+        {
+            Destroy(bullet.gameObject);
+        }
+    }
+
+    public virtual void ShootPowerGunUp()
+    {
+        if (powerGunCooldown <= 0f)
+        {
+            Shoot();
+            powerGunCooldown = powerGunCooldownDuration;
+        }
+    }
+
+    protected virtual void Update()
+    {
+        if (powerGunCooldown > 0f)
+        {
+            powerGunCooldown -= Time.deltaTime;
+        }
     }
 }

@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - PlayerBullet
   - EnemyBullet
+  - CollectableNuke
+  - CollectableGunPowerUp
   layers:
   - Default
   - TransparentFX
