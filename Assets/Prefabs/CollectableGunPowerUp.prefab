@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1841a2a3d66c5f42bfc9936317897f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectablesGunPowerUp
+  destroyDelay: 3
 --- !u!114 &6130423437559204441
 MonoBehaviour:
   m_ObjectHideFlags: 0

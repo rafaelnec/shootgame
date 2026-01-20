@@ -19,7 +19,7 @@ public abstract class PlayableObject : MonoBehaviour, IDamageable
     protected float _speed;
 
     protected float powerGunCooldown = 0f;
-    protected float powerGunCooldownDuration = 0.2f;
+    protected float powerGunCooldownDuration = 0.1f;
 
     public PlayableObject() { }
     public PlayableObject(float maxHealth)
@@ -93,7 +93,8 @@ public abstract class PlayableObject : MonoBehaviour, IDamageable
         Bullet[] allBullets = FindObjectsByType<Bullet>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
         foreach (Enemy enemy in allEnemies)
         {
-            Destroy(enemy.gameObject);
+            enemy.EnemyHitByNuke(enemy);
+            // Destroy(enemy.gameObject);
         }
         foreach (Collectables collectable in allObjects)
         {

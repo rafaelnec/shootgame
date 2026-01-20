@@ -1,20 +1,24 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
-
+    private EnemyController enemyController;
     protected Player player; 
     protected Transform playerTransform;
     public float moveSpeed = 3f;
     public float damage = 0;
     public float shootTimeRate = 1.0f;
     public float shootSpeed = 5.0f;
+    public int scoreValue { get; set; } = 0;
     public GameObject weapon;
     private Weapon _weapon;
 
+    private bool _playerHitEnemy = false;
+
     protected virtual void Start()
     {
+        enemyController = FindFirstObjectByType<EnemyController>();
         player = FindFirstObjectByType<Player>();
         playerTransform = player.transform;
         if(weapon)
@@ -36,16 +40,33 @@ public class Enemy : MonoBehaviour
     // This function is called when another collider enters the trigger zone
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.CompareTag("Player") && !_playerHitEnemy)
         {
+            _playerHitEnemy = true;
             player.TakeDamage(damage);
             Destroy(gameObject, 0.5f);
         }
 
-        if(other.gameObject.tag == "PlayerBullet")
+        if(other.gameObject.CompareTag("PlayerBullet") && !_playerHitEnemy)
         {
+            _playerHitEnemy = true;
+            player.Score(scoreValue);
             Destroy(gameObject);
             Destroy(other.gameObject);
+        } 
+
+        if(_playerHitEnemy)
+        {
+            enemyController.OnEnemyTriggerEnter();
+            _playerHitEnemy = false;
         }
+      
     }
+
+    public void EnemyHitByNuke(Enemy enemy)
+    {
+        enemyController.OnEnemyTriggerEnter(true);
+        Destroy(enemy.gameObject);
+    }
+
 }

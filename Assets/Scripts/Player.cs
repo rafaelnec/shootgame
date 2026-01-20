@@ -25,6 +25,9 @@ public class Player : PlayableObject
     public bool _shootPowerGunUpEnd = false;
     public bool _shootPowerGunActivate = false;
 
+    [SerializeField]
+    private GameController gameController;
+
     void Start()
     {
         health.AddHealth(100);
@@ -62,11 +65,23 @@ public class Player : PlayableObject
         Time.timeScale = 0f;
     }
 
+    public void Heal(float healAmount)
+    {
+        healAmount = health.GetHealth() + healAmount > 100 ? 100 - health.GetHealth() : healAmount;
+        health.AddHealth(healAmount);
+        SetHealthText();
+    }
+
     public void TakeDamage(float damage)
     {
         health.DeductHealth(damage);
         SetHealthText();
         if (health.GetHealth() <= 0) Knockout();
+    }
+
+    public void Score(int score)
+    {
+        gameController.AddScore(score);
     }
 
     private void SetHealthText()

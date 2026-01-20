@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3897230725070103953}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -180,6 +180,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37020812652f7d1418d33cc5f1ec1a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  enemyController: {fileID: 0}
+  enemyPrefabs:
+  - {fileID: 7758504506149502798, guid: 27e16d0988ccd214598e9055400d1264, type: 3}
+  - {fileID: 3613915529898039821, guid: 3820f8bfc852c5043a526fcc0bdb2eea, type: 3}
+  - {fileID: 8449086161523661355, guid: 172825329adf5494dac693e2edabd731, type: 3}
+  enemySprites:
+  - {fileID: 8020143640844766479, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
+  - {fileID: -6251682230944352461, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
+  - {fileID: -1259408508766424310, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
+  - {fileID: -5962389079421231736, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
+  - {fileID: 2788568348960109317, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
+  - {fileID: 226702753830753226, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
+  - {fileID: -7921052967969465774, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
+  - {fileID: -1370661682523340017, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
+  - {fileID: -8276262488406422588, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
+  - {fileID: -5906973516983679737, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
+  enemyCurrentLevel: 1
   moveSpeed: 3
   damage: 0
   shootTimeRate: 1

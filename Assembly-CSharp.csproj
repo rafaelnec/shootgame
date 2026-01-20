@@ -48,6 +48,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.2.6f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\KeepObjectOnScreen.cs" />
     <Compile Include="Assets\Scripts\NukeController.cs" />
     <Compile Include="Assets\Scripts\Collectables.cs" />
@@ -59,12 +60,14 @@
     <Compile Include="Assets\Scripts\ShowCase01.cs" />
     <Compile Include="Assets\Scripts\EnemyShooter.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\PlayableObject.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\IDamageable.cs" />
     <Compile Include="Assets\Scripts\ClockFillAnimator.cs" />
     <Compile Include="Assets\Scripts\CollectablesNuke.cs" />
+    <Compile Include="Assets\Scripts\CollectablesHealth.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\EnemyMachineGun.cs" />
   </ItemGroup>
