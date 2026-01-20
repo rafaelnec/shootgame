@@ -86,35 +86,6 @@ public class Player : PlayableObject
         }
     }
 
-    // public int GetGunPowerUpCount()
-    // {
-    //     return gunpPowerUpCount;
-    // }
-
-    // public bool GetGunPowerEnd()
-    // {
-    //     return _shootPowerGunUpEnd;
-    // }
-
-    // public void SetGunPowerEnd(bool gunPowerEnd)
-    // {
-    //     _shootPowerGunUpEnd = gunPowerEnd;
-    // }
-
-    // public override void ShootPowerGunUp()
-    // {
-    //     if (!_shootPowerGunActivate)
-    //     {
-    //         _shootPowerGunActivate = true;
-    //         gunPowerUpCountDown.SetActive(true);
-    //         ClockFillAnimator clockFillAnimator = gunPowerUpCountDown.GetComponentsInChildren<ClockFillAnimator>()[0];
-    //         clockFillAnimator.duration = powerGunUpDuration;
-    //         clockFillAnimator.PlayAnimateClockFill();
-    //         Invoke("ShootPowerGunUpEnd", powerGunUpDuration);
-    //     }
-    //     base.ShootPowerGunUp();
-    // }
-
     public void ShootPowerGunUpReset()
     {
         _shootPowerGunUpEnd = false;
