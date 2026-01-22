@@ -15,8 +15,9 @@ public class CollectablesHealth : Collectables
     private int _healthAmount = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Start()
     {
+        base.Start();
         int randomIndex = Random.Range(0, _healthObj.Count);
         Dictionary<string,object> healthItem = _healthObj[randomIndex];
 

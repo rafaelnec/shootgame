@@ -39,6 +39,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2333914323346510980
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -84,7 +85,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1370661682523340017, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -8276262488406422588, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +95,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &1244270622990355675
 Rigidbody2D:
@@ -160,7 +161,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.73, y: 2.5183966}
+    oldSize: {x: 1.8800001, y: 2.6488314}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -185,6 +186,9 @@ MonoBehaviour:
   shootTimeRate: 1
   shootSpeed: 3
   weapon: {fileID: 1929187908555219329}
+  enemyHitByPlayer:
+    m_PersistentCalls:
+      m_Calls: []
   followDistance: 4
 --- !u!114 &4610572766061937213
 MonoBehaviour:

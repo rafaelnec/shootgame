@@ -13,11 +13,11 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _rb.linearVelocity = GetDierection() * _bulletSpeed;
     }
 
     void Update()
     {
-        _rb.linearVelocity = GetDierection() * _bulletSpeed;
     }
 
     void OnBecameInvisible()

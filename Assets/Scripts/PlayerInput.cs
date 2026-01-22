@@ -33,8 +33,6 @@ public class PlayerInput : MonoBehaviour
         {
             if (Time.time - mouseDownTime >= holdThreshold)
             {
-                // Action for *starting* a hold
-                Debug.Log("Hold started!");
                 HandleHoldClick();
                 isHolding = true;
             }
@@ -45,13 +43,11 @@ public class PlayerInput : MonoBehaviour
             if (!isHolding)
             {
                 // Action for a *single, quick* click
-                Debug.Log("Single click detected!");
                 HandleSingleClick();
             }
             else
             {
                 // Action for *releasing* a hold
-                Debug.Log("Hold released.");
                 HandleHoldRelease();
             }
             isHolding = false;

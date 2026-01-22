@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
@@ -14,7 +15,14 @@ public class Enemy : MonoBehaviour
     public GameObject weapon;
     private Weapon _weapon;
 
-    private bool _playerHitEnemy = false;
+    // private bool _playerHitEnemy = false;
+
+    public UnityEvent enemyHitByPlayer;
+
+    public void Awake()
+    {
+        enemyHitByPlayer = new UnityEvent();
+    }
 
     protected virtual void Start()
     {
@@ -28,7 +36,6 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        Debug.Log("Enemy Shoot Coroutine Started" + _weapon == null);
         while(_weapon)
         {
             yield return new WaitForSeconds(shootTimeRate);
@@ -40,32 +47,28 @@ public class Enemy : MonoBehaviour
     // This function is called when another collider enters the trigger zone
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player") && !_playerHitEnemy)
+        if(other.gameObject.CompareTag("Player"))
         {
-            _playerHitEnemy = true;
             player.TakeDamage(damage);
             Destroy(gameObject, 0.5f);
-        }
-
-        if(other.gameObject.CompareTag("PlayerBullet") && !_playerHitEnemy)
-        {
-            _playerHitEnemy = true;
+        } 
+        if(other.gameObject.CompareTag("PlayerBullet"))
+        {   
             player.Score(scoreValue);
             Destroy(gameObject);
             Destroy(other.gameObject);
         } 
-
-        if(_playerHitEnemy)
-        {
-            enemyController.OnEnemyTriggerEnter();
-            _playerHitEnemy = false;
-        }
       
+    }
+
+    void OnDestroy()
+    {
+        enemyHitByPlayer.Invoke();
+        enemyHitByPlayer.RemoveAllListeners();
     }
 
     public void EnemyHitByNuke(Enemy enemy)
     {
-        enemyController.OnEnemyTriggerEnter(true);
         Destroy(enemy.gameObject);
     }
 

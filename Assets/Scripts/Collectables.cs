@@ -6,7 +6,7 @@ public class Collectables : MonoBehaviour
     [SerializeField]
     private float destroyDelay = 3f;
 
-    void Start()
+    public virtual void Start()
     {
         Destroy(gameObject, destroyDelay);
     }

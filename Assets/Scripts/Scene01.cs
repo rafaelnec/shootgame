@@ -56,31 +56,31 @@ public class Scene01 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            CreateEnemy();
-        }
-    }
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.E))
+    //     {
+    //         CreateEnemy();
+    //     }
+    // }
 
-    void CreateEnemy()
-    {
+    // void CreateEnemy()
+    // {
 
-        // Get screen bounds in world coordinates
-        Vector2 bottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));
-        Vector2 topRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.nearClipPlane));
+    //     // Get screen bounds in world coordinates
+    //     Vector2 bottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));
+    //     Vector2 topRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.nearClipPlane));
 
-        // Generate random position within screen bounds
-        float randomX = Random.Range(bottomLeft.x, topRight.x);
-        float randomY = Random.Range(bottomLeft.y, topRight.y);
-        Vector2 spawnPosition = new Vector2(randomX, randomY);
+    //     // Generate random position within screen bounds
+    //     float randomX = Random.Range(bottomLeft.x, topRight.x);
+    //     float randomY = Random.Range(bottomLeft.y, topRight.y);
+    //     Vector2 spawnPosition = new Vector2(randomX, randomY);
         
-        int randomIndex = UnityEngine.Random.Range(0, enemyPrefabs.Count);
-        Enemy prefabToInstantiate = enemyPrefabs[randomIndex];
-        Instantiate(prefabToInstantiate, spawnPosition, Quaternion.identity);
+    //     int randomIndex = UnityEngine.Random.Range(0, enemyPrefabs.Count);
+    //     Enemy prefabToInstantiate = enemyPrefabs[randomIndex];
+    //     Instantiate(prefabToInstantiate, spawnPosition, Quaternion.identity);
         
-    }
+    // }
 
     void CreateCollectable()
     {
@@ -102,14 +102,14 @@ public class Scene01 : MonoBehaviour
         
     }
 
-    IEnumerator EnemySpawner()
-    {
-        while(isEnemySpawning)
-        {
-            yield return new WaitForSeconds(1.0f / enemySpawnRate);
-            CreateEnemy();
-        }
-    }
+    // IEnumerator EnemySpawner()
+    // {
+    //     while(isEnemySpawning)
+    //     {
+    //         yield return new WaitForSeconds(1.0f / enemySpawnRate);
+    //         CreateEnemy();
+    //     }
+    // }
 
     IEnumerator CollectablesSpawner()
     {
