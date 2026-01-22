@@ -7,6 +7,8 @@ using UnityEngine.Events;
 public class EnemyController : MonoBehaviour
 {   
 
+    private static EnemyController _instance;
+
     [Header("Enemies")]
     [SerializeField]
     private int enemyCurrentLevel = 8;
@@ -16,12 +18,25 @@ public class EnemyController : MonoBehaviour
     private List<Sprite> enemySprites;
     [SerializeField]
     private int enemyHitCount = 0;
-    private GameController _gameController;
+    public UnityEvent NextLevelEnemySpawn;
 
+    void SetSingleton()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        _instance = this;
+    }
+
+    private void Awake()
+    {
+        SetSingleton();
+    }
 
     void Start()
     {       
-        _gameController = FindFirstObjectByType<GameController>();
         SpawEnemy();
     }
 
@@ -30,6 +45,7 @@ public class EnemyController : MonoBehaviour
         enemyHitCount++;
         if (enemyHitCount == enemyCurrentLevel)
         {
+            if(enemyCurrentLevel == 9) NextLevelEnemySpawn.Invoke();
             enemyCurrentLevel = enemyCurrentLevel < 9 ? enemyCurrentLevel + 1 : 1;
             enemyHitCount = 0;
             SpawEnemy();
@@ -55,7 +71,7 @@ public class EnemyController : MonoBehaviour
             SpriteRenderer spriteRenderer = enemy.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = enemySprites[enemyCurrentLevel];
             enemy.scoreValue = enemyCurrentLevel;
-            enemy.enemyHitByPlayer.AddListener(OnEnemyTriggerEnter);
+            enemy.EnemyEliminated.AddListener(OnEnemyTriggerEnter);
         }
     }
 

@@ -15,14 +15,7 @@ public class Enemy : MonoBehaviour
     public GameObject weapon;
     private Weapon _weapon;
 
-    // private bool _playerHitEnemy = false;
-
-    public UnityEvent enemyHitByPlayer;
-
-    public void Awake()
-    {
-        enemyHitByPlayer = new UnityEvent();
-    }
+    public UnityEvent EnemyEliminated;
 
     protected virtual void Start()
     {
@@ -63,13 +56,8 @@ public class Enemy : MonoBehaviour
 
     void OnDestroy()
     {
-        enemyHitByPlayer.Invoke();
-        enemyHitByPlayer.RemoveAllListeners();
-    }
-
-    public void EnemyHitByNuke(Enemy enemy)
-    {
-        Destroy(enemy.gameObject);
+        EnemyEliminated?.Invoke();
+        EnemyEliminated?.RemoveAllListeners();
     }
 
 }

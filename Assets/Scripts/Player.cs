@@ -1,21 +1,19 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
-// Our Player class is our "Object" that we'll use for the player character
 public class Player : PlayableObject
 {
-    [SerializeField]
-    private Rigidbody2D _playerRB;
 
-    [SerializeField]
-    private Camera _playerCamera;
+    private static Player _instance;
+
+    [SerializeField] private Rigidbody2D _playerRB;
+    [SerializeField] private Camera _playerCamera;
 
     public TextMeshProUGUI healthText;
-
     public GameObject gameOverScreen;
-
     public GameObject nukeBar;
     public int nukeCount = 0;
     public GameObject gunpPowerUpBar;   
@@ -23,10 +21,24 @@ public class Player : PlayableObject
     public GameObject gunPowerUpCountDown;
     public float powerGunUpDuration = 5f;
     public bool _shootPowerGunUpEnd = false;
-    public bool _shootPowerGunActivate = false;
+    public bool _shootPowerGunActivate = false;   
 
-    [SerializeField]
-    private GameController gameController;
+    public UnityEvent<int> PlayerScored;
+
+    void SetSingleton()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        _instance = this;
+    }
+
+    private void Awake()
+    {
+        SetSingleton();
+    }
 
     void Start()
     {
@@ -81,7 +93,7 @@ public class Player : PlayableObject
 
     public void Score(int score)
     {
-        gameController.AddScore(score);
+        PlayerScored.Invoke(score);
     }
 
     private void SetHealthText()
@@ -108,7 +120,6 @@ public class Player : PlayableObject
 
     public override void ShootPowerGunUp()
     {
-        Debug.Log("ShootPowerGunUp called" + gunpPowerUpCount + " " + _shootPowerGunUpEnd);
         if (gunpPowerUpCount > 0 && !_shootPowerGunUpEnd)
         {
             if (!_shootPowerGunActivate)
@@ -144,7 +155,6 @@ public class Player : PlayableObject
             float damage = other.gameObject.GetComponent<Bullet>().GetBulletDamage();  
             TakeDamage(damage);
             Destroy(other.gameObject);
-            Debug.Log("Playable Object Hit by Enemy Bullet");
         }
 
         if(other.gameObject.tag == "CollectableNuke")

@@ -1,8 +1,11 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+
+    private static GameController _instance;
 
     [SerializeField]
     private Player player;
@@ -12,16 +15,24 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private int gameLevel = 1;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void SetSingleton()
     {
-        
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        _instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        SetSingleton();
+    }
+
+    void Start()
+    {
+        player.PlayerScored.AddListener(AddScore);
     }
 
     public void NextLevel()
@@ -31,8 +42,13 @@ public class GameController : MonoBehaviour
 
     public void AddScore(int score)
     {
-        Debug.Log("Adding Score: " + score);
         totalScore += score * gameLevel;
         scoreText.text = totalScore.ToString().PadLeft(16, '0');
+    }
+
+    public void NewGameButtonOnClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
 }

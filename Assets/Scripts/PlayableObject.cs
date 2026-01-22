@@ -80,21 +80,18 @@ public abstract class PlayableObject : MonoBehaviour, IDamageable
         if(other.gameObject.tag == "EnemyBullet")
         {
             float damage = other.gameObject.GetComponent<Bullet>().GetBulletDamage();  
-            Debug.Log("Playable Object Hit by Enemy Bullet");
         }
 
     }
 
     public virtual void ShootNuke()
     {
-        Debug.Log("Nuke Activated!");
         Collectables[] allObjects = FindObjectsByType<Collectables>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
         Enemy[] allEnemies = FindObjectsByType<Enemy>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
         Bullet[] allBullets = FindObjectsByType<Bullet>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
         foreach (Enemy enemy in allEnemies)
         {
-            enemy.EnemyHitByNuke(enemy);
-            // Destroy(enemy.gameObject);
+            Destroy(enemy.gameObject);
         }
         foreach (Collectables collectable in allObjects)
         {

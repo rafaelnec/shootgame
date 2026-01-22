@@ -119,37 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &3131708
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3131709}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3131709
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3131708}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.82, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &135955712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1043,21 @@ MonoBehaviour:
   - {fileID: -8276262488406422588, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
   - {fileID: -108722339, guid: 3e63672e4f367fc4c870a52525576187, type: 3}
   enemyHitCount: 0
+  NextLevelEnemySpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 979036444}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &667363324
 Transform:
   m_ObjectHideFlags: 0
@@ -2035,6 +2019,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126384920}
   m_CullTransparentMesh: 1
+--- !u!1 &1164099633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1164099634}
+  - component: {fileID: 1164099635}
+  m_Layer: 0
+  m_Name: CollectableController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1164099634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164099633}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.82, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1164099635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164099633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd8e69907bf23354a90ab15059f61ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectableController
+  collectablesPrefabs:
+  - {fileID: 7054873006161104137, guid: 6e7172ea584906e449cfd9fcd40287ac, type: 3}
+  - {fileID: 1629681854180419870, guid: 0ec450693f76fb443b2dbb6fd8d32af2, type: 3}
+  - {fileID: -1383049085448895930, guid: 0363a5f7d8d8bde4e919f895169c2571, type: 3}
+  minCollectablesSpawnDelay: 1
+  maxCollectablesSpawnDelay: 10
 --- !u!1 &1254833324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,6 +2133,37 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!1 &1263778229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1263778230}
+  m_Layer: 0
+  m_Name: PlayerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1263778230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263778229}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.82, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1373901465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,8 +2247,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1934608488}
-        m_TargetAssemblyTypeName: Scene01, Assembly-CSharp
+      - m_Target: {fileID: 979036444}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: NewGameButtonOnClick
         m_Mode: 1
         m_Arguments:
@@ -2755,7 +2820,9 @@ MonoBehaviour:
   powerGunUpDuration: 5
   _shootPowerGunUpEnd: 0
   _shootPowerGunActivate: 0
-  gameController: {fileID: 979036444}
+  PlayerScored:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &1817530193
 Rigidbody2D:
   serializedVersion: 5
@@ -2850,14 +2917,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817530190}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1816288719}
   - {fileID: 355486657}
-  m_Father: {fileID: 1934608487}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1817530196
 PolygonCollider2D:
@@ -2953,62 +3020,6 @@ Transform:
   - {fileID: 554055935}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1934608486
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1934608487}
-  - component: {fileID: 1934608488}
-  m_Layer: 0
-  m_Name: Scene01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1934608487
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934608486}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1817530195}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1934608488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934608486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0e8c92f92c6254abe6845cffa0047e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Scene01
-  enemyPrefabs:
-  - {fileID: 7758504506149502798, guid: 27e16d0988ccd214598e9055400d1264, type: 3}
-  - {fileID: 3613915529898039821, guid: 3820f8bfc852c5043a526fcc0bdb2eea, type: 3}
-  - {fileID: 8449086161523661355, guid: 172825329adf5494dac693e2edabd731, type: 3}
-  collectablesPrefabs:
-  - {fileID: -1383049085448895930, guid: 0363a5f7d8d8bde4e919f895169c2571, type: 3}
-  - {fileID: 7054873006161104137, guid: 6e7172ea584906e449cfd9fcd40287ac, type: 3}
-  - {fileID: 1629681854180419870, guid: 0ec450693f76fb443b2dbb6fd8d32af2, type: 3}
-  enemySpawnRate: 0.5
-  minCollectablesSpawnDelay: 0
-  maxCollectablesSpawnDelay: 5
 --- !u!1001 &1948618639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3312,11 +3323,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 619394802}
   - {fileID: 979036445}
+  - {fileID: 1164099634}
   - {fileID: 667363324}
+  - {fileID: 1263778230}
+  - {fileID: 542874553}
   - {fileID: 950456847}
   - {fileID: 1871570595}
-  - {fileID: 619394802}
-  - {fileID: 1934608487}
-  - {fileID: 542874553}
-  - {fileID: 3131709}
+  - {fileID: 1817530195}
