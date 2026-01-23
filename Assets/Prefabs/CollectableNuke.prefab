@@ -37,6 +37,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1741132454113875986
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -82,8 +83,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.8113208, g: 0.4911944, b: 0.16991813, a: 1}
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -1242187556347939975, guid: bea44803bf7d0694d81adfa730a5e701, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -91,7 +93,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!60 &3803355006146522744
 PolygonCollider2D:
@@ -131,7 +132,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8828125}
+    oldSize: {x: 2.14, y: 2.14}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -139,12 +140,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.25, y: 0.43359375}
-      - {x: -0.5, y: 0}
-      - {x: -0.25, y: -0.43359375}
-      - {x: 0.25, y: -0.43359375}
-      - {x: 0.5, y: 0}
-      - {x: 0.25, y: 0.43359375}
+    - - {x: 0.51573247, y: 1.1095921}
+      - {x: -1.0204586, y: -0.44268906}
+      - {x: -1.0456437, y: -1.1036097}
+      - {x: -0.30635244, y: -0.96003485}
+      - {x: 1.0922462, y: 0.5862639}
+      - {x: 0.8901044, y: 0.90021175}
   m_UseDelaunayMesh: 0
 --- !u!114 &-1383049085448895930
 MonoBehaviour:
@@ -158,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44c865cf8f0190429c2865a275f9573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectablesNuke
+  destroyDelay: 3
 --- !u!114 &-986985033690501307
 MonoBehaviour:
   m_ObjectHideFlags: 0
