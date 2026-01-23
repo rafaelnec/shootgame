@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8967747401517207358}
   - component: {fileID: 7758504506149502798}
   - component: {fileID: 2605383570246382057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyExploding
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00000017881393, y: 0.02664709}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -166,7 +166,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.0201964, y: 2.8348317}
   m_EdgeRadius: 0
 --- !u!114 &7758504506149502798
 MonoBehaviour:
@@ -180,12 +180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1402765cd0efd1d4e93ccb6c7d71ed6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyExploding
+  weapon: {fileID: 0}
   moveSpeed: 3
   damage: 10
   shootTimeRate: 1
   shootSpeed: 10
-  weapon: {fileID: 0}
-  enemyHitByPlayer:
+  separationSpeed: 2
+  EnemyEliminated:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2605383570246382057

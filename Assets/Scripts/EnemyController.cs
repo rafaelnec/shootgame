@@ -10,15 +10,18 @@ public class EnemyController : MonoBehaviour
     private static EnemyController _instance;
 
     [Header("Enemies")]
-    [SerializeField]
-    private int enemyCurrentLevel = 8;
-    [SerializeField]
-    private List<Enemy> enemyPrefabs;
-    [SerializeField]
-    private List<Sprite> enemySprites;
-    [SerializeField]
-    private int enemyHitCount = 0;
-    public UnityEvent NextLevelEnemySpawn;
+    [SerializeField] private List<Enemy> enemyPrefabs;
+    [SerializeField] private List<Sprite> enemySprites;
+    [SerializeField] private float enemyIncreaseSpeedRate = 0.25f;
+    [SerializeField] private float enemyIncreaseDamageRate = 0.25f;
+    [SerializeField] private float enemyIncreaseShootSpeedRate = 0.25f;
+    
+    private float _enemyIncreaseSpeed = 0f;
+    private float _enemyIncreaseDamage = 0f;
+    private float _enemyIncreaseShootSpeed = 0f;
+    
+    public UnityEvent EnemyEliminated;
+
 
     void SetSingleton()
     {
@@ -35,25 +38,13 @@ public class EnemyController : MonoBehaviour
         SetSingleton();
     }
 
-    void Start()
-    {       
-        SpawEnemy();
-    }
 
-    public void OnEnemyTriggerEnter()
+    public void OnEnemyEliminated()
     {
-        enemyHitCount++;
-        if (enemyHitCount == enemyCurrentLevel)
-        {
-            if(enemyCurrentLevel == 9) NextLevelEnemySpawn.Invoke();
-            enemyCurrentLevel = enemyCurrentLevel < 9 ? enemyCurrentLevel + 1 : 1;
-            enemyHitCount = 0;
-            SpawEnemy();
-        }
-        
+        EnemyEliminated.Invoke();
     }
 
-    public void SpawEnemy()
+    public void SpawEnemy(int enemyCurrentLevel)
     {
         Vector2 bottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));
         Vector2 topRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.nearClipPlane));
@@ -71,8 +62,19 @@ public class EnemyController : MonoBehaviour
             SpriteRenderer spriteRenderer = enemy.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = enemySprites[enemyCurrentLevel];
             enemy.scoreValue = enemyCurrentLevel;
-            enemy.EnemyEliminated.AddListener(OnEnemyTriggerEnter);
+            enemy.moveSpeed += _enemyIncreaseSpeed;
+            enemy.damage += _enemyIncreaseDamage;
+            enemy.shootSpeed += _enemyIncreaseShootSpeed;
+            enemy.IncreaseWeaponDamage(_enemyIncreaseDamage);
+            enemy.EnemyEliminated.AddListener(OnEnemyEliminated);
         }
+    }
+
+    public void SetUpEnemyLevel(int level)
+    {
+        _enemyIncreaseSpeed = (level - 1) * enemyIncreaseSpeedRate;
+        _enemyIncreaseDamage = (level - 1) * enemyIncreaseDamageRate;
+        _enemyIncreaseShootSpeed = (level - 1) * enemyIncreaseShootSpeedRate;
     }
 
 }

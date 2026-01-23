@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 715353750017827801}
   - component: {fileID: 3058234221381790404}
   - component: {fileID: 6303685945859637605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +35,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3058234221381790404
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -80,6 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -6251682230944352461, guid: 4139ce5de9290e6498c9bb3f699fe905, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -89,7 +91,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6303685945859637605
 MonoBehaviour:
@@ -103,8 +104,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37020812652f7d1418d33cc5f1ec1a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  weapon: {fileID: 0}
   moveSpeed: 3
   damage: 0
   shootTimeRate: 1
   shootSpeed: 5
-  weapon: {fileID: 0}
+  separationSpeed: 2
+  EnemyEliminated:
+    m_PersistentCalls:
+      m_Calls: []
