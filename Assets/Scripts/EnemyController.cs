@@ -10,11 +10,9 @@ public class EnemyController : MonoBehaviour
     private static EnemyController _instance;
 
     [Header("Enemies")]
-    [SerializeField] private List<Enemy> enemyPrefabs;
-    [SerializeField] private List<Sprite> enemySprites;
-    [SerializeField] private float enemyIncreaseSpeedRate = 0.25f;
-    [SerializeField] private float enemyIncreaseDamageRate = 0.25f;
-    [SerializeField] private float enemyIncreaseShootSpeedRate = 0.25f;
+    [SerializeField] private EnemySettings enemySettings;
+    [SerializeField] private List<Enemy> enemyPrefabs;   
+    [SerializeField] private GameObject destructionEffectPrefab;
     
     private float _enemyIncreaseSpeed = 0f;
     private float _enemyIncreaseDamage = 0f;
@@ -48,6 +46,8 @@ public class EnemyController : MonoBehaviour
     {
         Vector2 bottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));
         Vector2 topRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.nearClipPlane));
+        EnemyData enemyData = enemySettings.EnemyObjects[enemyCurrentLevel];
+
         // Get screen bounds in world coordinates
         for (int i = 0; i < enemyCurrentLevel; i++)
         {
@@ -60,11 +60,12 @@ public class EnemyController : MonoBehaviour
             Enemy prefabToInstantiate = enemyPrefabs[randomIndex];
             Enemy enemy = Instantiate(prefabToInstantiate, spawnPosition, Quaternion.identity);
             SpriteRenderer spriteRenderer = enemy.GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = enemySprites[enemyCurrentLevel];
+            spriteRenderer.sprite = enemyData.enemySprite;
             enemy.scoreValue = enemyCurrentLevel;
             enemy.moveSpeed += _enemyIncreaseSpeed;
             enemy.damage += _enemyIncreaseDamage;
             enemy.shootSpeed += _enemyIncreaseShootSpeed;
+            enemy.enemyData = enemyData;
             enemy.IncreaseWeaponDamage(_enemyIncreaseDamage);
             enemy.EnemyEliminated.AddListener(OnEnemyEliminated);
         }
@@ -72,9 +73,10 @@ public class EnemyController : MonoBehaviour
 
     public void SetUpEnemyLevel(int level)
     {
-        _enemyIncreaseSpeed = (level - 1) * enemyIncreaseSpeedRate;
-        _enemyIncreaseDamage = (level - 1) * enemyIncreaseDamageRate;
-        _enemyIncreaseShootSpeed = (level - 1) * enemyIncreaseShootSpeedRate;
+        EnemyData enemyData = enemySettings.EnemyObjects[level -1];
+        _enemyIncreaseSpeed = (level - 1) * enemyData.enemyIncreaseSpeedRate;
+        _enemyIncreaseDamage = (level - 1) * enemyData.enemyIncreaseDamageRate;
+        _enemyIncreaseShootSpeed = (level - 1) * enemyData.enemyIncreaseShootSpeedRate;
     }
 
 }

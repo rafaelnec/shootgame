@@ -1,0 +1,19 @@
+using UnityEngine;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class EnemyData
+{
+    public Sprite enemySprite;
+    public GameObject effectPrefab;
+    public float enemyIncreaseSpeedRate = 0.25f;
+    public float enemyIncreaseDamageRate = 0.25f;
+    public float enemyIncreaseShootSpeedRate = 0.25f;
+}
+
+[CreateAssetMenu(fileName = "EnemySettings", menuName = "Scriptable Objects/EnemySettings")]
+public class EnemySettings : ScriptableObject
+{
+    public List<EnemyData> EnemyObjects = new List<EnemyData>();
+    
+}

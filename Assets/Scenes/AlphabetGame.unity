@@ -1663,6 +1663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f1fe6c663e62e4c871f4facdd81814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
+  enemySettings: {fileID: 11400000, guid: 0417a7a551787d746839cda98ac1f984, type: 2}
   enemyPrefabs:
   - {fileID: 8449086161523661355, guid: 172825329adf5494dac693e2edabd731, type: 3}
   - {fileID: 3613915529898039821, guid: 3820f8bfc852c5043a526fcc0bdb2eea, type: 3}
@@ -1681,6 +1682,7 @@ MonoBehaviour:
   enemyIncreaseSpeedRate: 0.25
   enemyIncreaseDamageRate: 0.25
   enemyIncreaseShootSpeedRate: 0.25
+  destructionEffectPrefab: {fileID: 5112403345868107898, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
   EnemyEliminated:
     m_PersistentCalls:
       m_Calls:
