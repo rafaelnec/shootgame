@@ -30,6 +30,10 @@ public class Player : PlayableObject
     public UnityEvent<int> NukeCollected;
     public UnityEvent<int> NukeUsed;
 
+    private GameController _gameController;
+    private EndScoreManager _endScoreManager;
+    private SceneChanger _sceneChanger;
+
     void SetSingleton()
     {
         if (_instance != null && _instance != this)
@@ -47,6 +51,10 @@ public class Player : PlayableObject
 
     void Start()
     {
+        _gameController = FindFirstObjectByType<GameController>();
+        _endScoreManager = FindFirstObjectByType<EndScoreManager>();
+        _sceneChanger = FindFirstObjectByType<SceneChanger>();
+        
         health.AddHealth(100);
         SetHealthText();
     }
@@ -78,7 +86,14 @@ public class Player : PlayableObject
 
     public override void Knockout()
     {
-        PlayerKnockedOut.Invoke();
+        //update score within score manager
+        _endScoreManager.UpdateScores(_gameController.GetScore());
+        //change to game over scene
+        _sceneChanger.LoadScene("GameOverScene");
+
+        //previous code
+        //gameOverScreen.SetActive(true);
+        //Time.timeScale = 0f;
     }
 
     public void Heal(float healAmount)

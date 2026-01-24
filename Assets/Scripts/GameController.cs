@@ -75,6 +75,11 @@ public class GameController : MonoBehaviour
         scoreText.text = totalScore.ToString().PadLeft(16, ' ');
     }
 
+    public int GetScore()
+    {
+        return totalScore;
+    }
+
     public void GameOver()
     {
         gameOver.SetActive(true);
