@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
     public void AddScore(int score)
     {
         totalScore += score * gameLevel;
-        scoreText.text = totalScore.ToString().PadLeft(16, '0');
+        scoreText.text = totalScore.ToString().PadLeft(16, ' ');
     }
 
     public void GameOver()
