@@ -753,6 +753,7 @@ GameObject:
   - component: {fileID: 1859425601}
   - component: {fileID: 1859425600}
   - component: {fileID: 1859425602}
+  - component: {fileID: 1859425603}
   m_Layer: 5
   m_Name: CreditsText
   m_TagString: Untagged
@@ -801,7 +802,6 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Developed By
 
-    
 
     Esmat E Fatima Nilima
 
@@ -814,48 +814,49 @@ MonoBehaviour:
 
 
 
-    
+
 
     Art, Concept and Animation
 
-    
 
-    Esmat
-    E Fatima Nilima
+    Esmat E Fatima
+    Nilima
 
     Nick Robert
 
 
 
-    
+
 
     Music
 
-    
 
-    Esmat E Fatima
-    Nilima
+    Esmat E Fatima Nilima
 
 
 
-    
 
-    Level Design & Programming
 
-    
+    Level
+    Design & Programming
+
 
     Rafael Moraes
 
 
 
-    
 
-    Particles
-    & Post Processing
 
-    
+    Particles & Post Processing
 
-    Ani Keen
+
+    Ani
+    Keen
+
+
+
+
+
 
 
 
@@ -951,7 +952,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7f15461b042994b98e2eb1ee95535b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 60
+--- !u!114 &1859425603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859425598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441b475b8f43e5342b9de23e12a952fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 70
+  stopY: 2700
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
