@@ -7,6 +7,12 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+
+    public void OpenCredits()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
