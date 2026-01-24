@@ -31,7 +31,7 @@ public class Player : PlayableObject
     public UnityEvent<int> NukeUsed;
 
     private GameController _gameController;
-    private ScoreManager _scoreManager;
+    private EndScoreManager _endScoreManager;
     private SceneChanger _sceneChanger;
 
     void SetSingleton()
@@ -52,7 +52,7 @@ public class Player : PlayableObject
     void Start()
     {
         _gameController = FindFirstObjectByType<GameController>();
-        _scoreManager = FindFirstObjectByType<ScoreManager>();
+        _endScoreManager = FindFirstObjectByType<EndScoreManager>();
         _sceneChanger = FindFirstObjectByType<SceneChanger>();
         
         health.AddHealth(100);
@@ -87,7 +87,7 @@ public class Player : PlayableObject
     public override void Knockout()
     {
         //update score within score manager
-        _scoreManager.UpdateScores(_gameController.GetScore());
+        _endScoreManager.UpdateScores(_gameController.GetScore());
         //change to game over scene
         _sceneChanger.LoadScene("GameOverScene");
 

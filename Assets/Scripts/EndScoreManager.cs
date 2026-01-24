@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class EndScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance;
+    public static EndScoreManager Instance;
 
-    public int currentScore;
-    public int highScore;
+    private int currentScore;
+    private int highScore;
 
     private void Awake()
     {
@@ -26,5 +26,15 @@ public class ScoreManager : MonoBehaviour
         {
             highScore = currentScore;
         }
+    }
+
+    public int GetCurrentScore()
+    {
+        return currentScore;
+    }
+    
+    public int GetHighScore()
+    {
+        return highScore;
     }
 }
