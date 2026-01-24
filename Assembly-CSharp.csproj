@@ -51,9 +51,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\KeepObjectOnScreen.cs" />
+    <Compile Include="Assets\Scripts\Score\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\NukeController.cs" />
     <Compile Include="Assets\Scripts\CollectableController.cs" />
+    <Compile Include="Assets\Scripts\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\Collectables.cs" />
+    <Compile Include="Assets\Scripts\Score\HighScore.cs" />
     <Compile Include="Assets\Scripts\CollectablesGunPowerUp.cs" />
     <Compile Include="Assets\Scripts\EnemyExploding.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
@@ -62,10 +65,13 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
+    <Compile Include="Assets\Scripts\HealthTypes.cs" />
+    <Compile Include="Assets\Scripts\Game\GameLevelSettings.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\PlayableObject.cs" />
     <Compile Include="Assets\Scripts\InputSystem_Actions.cs" />
+    <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\IDamageable.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />

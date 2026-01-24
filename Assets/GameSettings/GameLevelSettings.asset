@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1ffe78b65a525499f74888d82faf00, type: 3}
+  m_Name: GameLevelSettings
+  m_EditorClassIdentifier: Assembly-CSharp::GameLevelSettings
+  GameData:
+  - PlayerSprite: {fileID: 21300000, guid: 08713c118fe02f84abdc4a4dddc92ba2, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 03a7032fb0e71ae4fb049a09a18da41e, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: a7f1317a674b91544b2d14ad89ac6dc1, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 7134de6b81993d04b9e756ee018b1ff0, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 33d1a942cca45af40b2e397322c1c87e, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: d63287a3c469b42488d6095af1980e68, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: d63287a3c469b42488d6095af1980e68, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: a66e17223405b52498c88936d74d2f42, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25

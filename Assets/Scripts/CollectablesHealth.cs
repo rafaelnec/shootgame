@@ -3,12 +3,7 @@ using UnityEngine;
 
 public class CollectablesHealth : Collectables
 {
-    private List<Dictionary<string,object>> _healthObj = new List<Dictionary<string,object>> {
-        new Dictionary<string,object> { {"health", 20}, {"color", Color.pink} },
-        new Dictionary<string,object> { {"health", 40}, {"color", Color.yellow} }, 
-        new Dictionary<string,object> { {"health", 80}, {"color", Color.blue} }, 
-        new Dictionary<string,object> { {"health", 100}, {"color", Color.green} } 
-    };
+    [SerializeField] private HealthTypes healthTypes;    
 
     private SpriteRenderer _sprite;
 
@@ -18,13 +13,12 @@ public class CollectablesHealth : Collectables
     public override void Start()
     {
         base.Start();
-        int randomIndex = Random.Range(0, _healthObj.Count);
-        Dictionary<string,object> healthItem = _healthObj[randomIndex];
+        int randomIndex = Random.Range(0, healthTypes.HealthObjects.Count);
+        HealthData healthItem = healthTypes.HealthObjects[randomIndex];
 
         _sprite = GetComponent<SpriteRenderer>();
-        _sprite.color = (Color)healthItem["color"];
-
-        _healthAmount = (int)healthItem["health"];
+        _sprite.sprite = healthItem.sprite;
+        _healthAmount = (int)healthItem.healAmount;
     }
 
     void OnTriggerEnter2D(Collider2D other)

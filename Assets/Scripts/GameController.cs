@@ -7,12 +7,16 @@ public class GameController : MonoBehaviour
 {
 
     [Header("Game")]
-    public UnityEvent<int> LoadSubLevel;
-    public UnityEvent<int> LoadNextGameLevel;
     private static GameController _instance;
     private int _countToNextSubLevel = 0;
+
+    [SerializeField] private GameLevelSettings gameLevelSettings;    
     [SerializeField] private int gameLevel = 1;
     [SerializeField] private int subLevel = 1;
+    [SerializeField] private GameObject gameOver;
+    
+    public UnityEvent<int> LoadSubLevel;
+    public UnityEvent<int> LoadNextGameLevel;
 
     [Header("Players")]
     [SerializeField] private TextMeshProUGUI scoreText;
@@ -55,8 +59,14 @@ public class GameController : MonoBehaviour
 
     public void NextGameLevel()
     {
-        gameLevel += 1;
-        LoadNextGameLevel.Invoke(gameLevel);
+        if (gameLevel < gameLevelSettings.GameData.Count)
+        {
+            gameLevel += 1;
+            LoadNextGameLevel.Invoke(gameLevel);
+        } else
+        {
+            GameOver();
+        }
     }
 
     public void AddScore(int score)
@@ -65,9 +75,11 @@ public class GameController : MonoBehaviour
         scoreText.text = totalScore.ToString().PadLeft(16, '0');
     }
 
-    public void NewGameButtonOnClick()
+    public void GameOver()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1f;
+        gameOver.SetActive(true);
+        gameOver.GetComponent<ScoreManager>().AddScore("Player", totalScore);
+        Time.timeScale = 0f;
+
     }
 }
