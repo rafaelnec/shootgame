@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,9 +12,10 @@ public class Player : PlayableObject
 
     [SerializeField] private Rigidbody2D _playerRB;
     [SerializeField] private Camera _playerCamera;
+    [SerializeField] private GameLevelSettings gameLevelSettings;    
 
     public TextMeshProUGUI healthText;
-    public GameObject gameOverScreen;
+    
     public GameObject nukeBar;
     public int nukeCount = 0;
     public GameObject gunpPowerUpBar;   
@@ -24,6 +26,9 @@ public class Player : PlayableObject
     public bool _shootPowerGunActivate = false;   
 
     public UnityEvent<int> PlayerScored;
+    public UnityEvent PlayerKnockedOut;
+    public UnityEvent<int> NukeCollected;
+    public UnityEvent<int> NukeUsed;
 
     private GameController _gameController;
     private ScoreManager _scoreManager;
@@ -122,7 +127,7 @@ public class Player : PlayableObject
         if (nukeCount > 0)
         {
             base.ShootNuke();
-            UpdateImageAlpha("Nuke", false);
+            NukeUsed.Invoke(nukeCount);
             nukeCount--;
         }
     }
@@ -176,8 +181,9 @@ public class Player : PlayableObject
             if (nukeCount < 3)
             {
                 nukeCount++;
-                Image uiImage = nukeBar.transform.Find("Nuke0" + nukeCount).GetComponent<Image>();
-                UpdateImageAlpha("Nuke", true);
+                NukeCollected.Invoke(nukeCount);
+                // Image uiImage = nukeBar.transform.Find("Nuke0" + nukeCount).GetComponent<Image>();
+                // UpdateImageAlpha("Nuke", true);
                 Destroy(other.gameObject);
             }
             
@@ -216,6 +222,15 @@ public class Player : PlayableObject
             Color tempColor = uiImage.color;
             tempColor.a = alpha;
             uiImage.color = tempColor;
+        }
+    }
+
+    public void UpdatePlayerSprite(int gameLevel)
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer && gameLevel < gameLevelSettings.GameData.Count)
+        {
+            spriteRenderer.sprite = gameLevelSettings.GameData[gameLevel-1].PlayerSprite;
         }
     }
 

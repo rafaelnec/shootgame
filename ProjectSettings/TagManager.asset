@@ -47,5 +47,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Menu
+    uniqueID: 156503325
+    locked: 0
+  - name: Game
+    uniqueID: 439676003
+    locked: 0
   m_RenderingLayers:
   - Default
