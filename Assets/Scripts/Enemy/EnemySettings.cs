@@ -9,6 +9,7 @@ public class EnemyData
     public float enemyIncreaseSpeedRate = 0.25f;
     public float enemyIncreaseDamageRate = 0.25f;
     public float enemyIncreaseShootSpeedRate = 0.25f;
+    public Color enemyColor;
 }
 
 [CreateAssetMenu(fileName = "EnemySettings", menuName = "Scriptable Objects/EnemySettings")]

@@ -13,6 +13,8 @@ public class Player : PlayableObject
     [SerializeField] private Rigidbody2D _playerRB;
     [SerializeField] private Camera _playerCamera;
     [SerializeField] private GameLevelSettings gameLevelSettings;    
+    [SerializeField] private AudioClip nukeSound;
+    [SerializeField] private AudioClip collectableSound;
 
     public TextMeshProUGUI healthText;
     
@@ -29,6 +31,8 @@ public class Player : PlayableObject
     public UnityEvent PlayerKnockedOut;
     public UnityEvent<int> NukeCollected;
     public UnityEvent<int> NukeUsed;
+    public UnityEvent<int> GunPowerUpCollected;
+    public UnityEvent<int> GunPowerUpUsed;
 
     private GameController _gameController;
     private EndScoreManager _endScoreManager;
@@ -86,14 +90,9 @@ public class Player : PlayableObject
 
     public override void Knockout()
     {
-        //update score within score manager
         _endScoreManager.UpdateScores(_gameController.GetScore());
-        //change to game over scene
-        _sceneChanger.LoadScene("GameOverScene");
-
-        //previous code
-        //gameOverScreen.SetActive(true);
-        //Time.timeScale = 0f;
+        // _sceneChanger.LoadScene("GameOverScene");
+        PlayerKnockedOut.Invoke();
     }
 
     public void Heal(float healAmount)
@@ -126,6 +125,10 @@ public class Player : PlayableObject
     {
         if (nukeCount > 0)
         {
+            if (nukeSound != null)
+            {
+                AudioSource.PlayClipAtPoint(nukeSound, transform.position);
+            }
             base.ShootNuke();
             NukeUsed.Invoke(nukeCount);
             nukeCount--;
@@ -160,7 +163,7 @@ public class Player : PlayableObject
         if (_shootPowerGunActivate)
         {
             gunPowerUpCountDown.SetActive(false);
-            UpdateImageAlpha("GunPowerUp", false);
+            GunPowerUpUsed.Invoke(gunpPowerUpCount);
             if (gunpPowerUpCount > 0) gunpPowerUpCount--;
             _shootPowerGunUpEnd = true;
             _shootPowerGunActivate = false;
@@ -180,10 +183,9 @@ public class Player : PlayableObject
         {
             if (nukeCount < 3)
             {
+                PlayCollectableSound();
                 nukeCount++;
                 NukeCollected.Invoke(nukeCount);
-                // Image uiImage = nukeBar.transform.Find("Nuke0" + nukeCount).GetComponent<Image>();
-                // UpdateImageAlpha("Nuke", true);
                 Destroy(other.gameObject);
             }
             
@@ -193,38 +195,29 @@ public class Player : PlayableObject
         {
             if (gunpPowerUpCount < 3)
             {
+                PlayCollectableSound();
                 gunpPowerUpCount++;
-                UpdateImageAlpha("GunPowerUp", true);
+                GunPowerUpCollected.Invoke(gunpPowerUpCount);
                 Destroy(other.gameObject);
             }
             
         }
 
-
-    }
-
-    private void UpdateImageAlpha(String collectabe, bool activate)
-    {
-        Image uiImage = null;
-        float alpha = activate ? 1f : 0.06f;
-
-        switch (collectabe)
+        if(other.gameObject.tag == "CollectableHealth")
         {
-            case "Nuke":
-                uiImage = nukeBar.transform.Find("Nuke0" + (nukeCount)).GetComponent<Image>();
-                break;
-            case "GunPowerUp":
-                uiImage = gunpPowerUpBar.transform.Find("GunPowerUp0" + (gunpPowerUpCount)).GetComponent<Image>();
-                break;
+            PlayCollectableSound();
         }
 
-        if (uiImage) {
-            Color tempColor = uiImage.color;
-            tempColor.a = alpha;
-            uiImage.color = tempColor;
-        }
+
     }
 
+    public void PlayCollectableSound()
+    {
+        if (collectableSound != null)
+        {
+            AudioSource.PlayClipAtPoint(collectableSound, transform.position);
+        }
+    }
     public void UpdatePlayerSprite(int gameLevel)
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
@@ -233,5 +226,10 @@ public class Player : PlayableObject
             spriteRenderer.sprite = gameLevelSettings.GameData[gameLevel-1].PlayerSprite;
         }
     }
+
+    // public void OnDestroy()
+    // {
+    //     Instantiate(effectPrefab, transform.position, Quaternion.identity);
+    // }
 
 }

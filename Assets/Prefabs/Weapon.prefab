@@ -106,3 +106,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   damage: 25
   bulletPrefab: {fileID: 4419483628070679522, guid: 1e0cbb1929980374bb3b7e8a6c63b5f5, type: 3}
+  shootSound: {fileID: 8300000, guid: e70691c8f1f66b64cab2a2a1ceef71bc, type: 3}

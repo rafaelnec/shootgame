@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private EnemySettings enemySettings;
     [SerializeField] private List<Enemy> enemyPrefabs;   
     [SerializeField] private GameObject destructionEffectPrefab;
+    [SerializeField] private AudioClip eliminationSound;
     
     private float _enemyIncreaseSpeed = 0f;
     private float _enemyIncreaseDamage = 0f;
@@ -39,6 +40,10 @@ public class EnemyController : MonoBehaviour
 
     public void OnEnemyEliminated()
     {
+        if (eliminationSound != null)
+        {
+            AudioSource.PlayClipAtPoint(eliminationSound, transform.position);
+        }
         EnemyEliminated.Invoke();
     }
 

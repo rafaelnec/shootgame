@@ -17,8 +17,8 @@ public class GameOverManager : MonoBehaviour
 
     void Start()
     {
-        playerScore.text = _scoreManager.GetFinalScore().score.ToString().PadLeft(16, '0');
-        highScore.text = _scoreManager.GetHighScore().ToString().PadLeft(16, '0');
+        playerScore.text = _scoreManager.GetFinalScore().score.ToString().PadLeft(12, '0');
+        highScore.text = _scoreManager.GetHighScore().ToString().PadLeft(12, '0');
     }
 
     public void PlayerAgainButtonOnClick()

@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
         {
             yield return new WaitForSeconds(shootTimeRate);
             _weapon.SetBulletTag("EnemyBullet");
+            _weapon.setBulletColour(enemyData.enemyColor);
             _weapon.Shoot(playerTransform, shootSpeed);
         } 
     }
@@ -39,7 +40,6 @@ public class Enemy : MonoBehaviour
     public void IncreaseWeaponDamage(float damageIncrease)
     {
         if (weapon != null) {
-            Debug.Log("dfsfds" + weapon.name);
             Weapon weaponComponent = weapon.GetComponentInChildren<Weapon>();
             if (weaponComponent != null) weaponComponent.damage += damageIncrease;
         }

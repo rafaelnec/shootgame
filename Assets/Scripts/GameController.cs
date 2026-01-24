@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int gameLevel = 1;
     [SerializeField] private int subLevel = 1;
     [SerializeField] private GameObject gameOver;
+    [SerializeField] private AudioClip gameOverSound;
     
     public UnityEvent<int> LoadSubLevel;
     public UnityEvent<int> LoadNextGameLevel;
@@ -22,6 +23,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private Player player;
     [SerializeField] private int totalScore = 0;
+    [SerializeField] private GameObject playerGameOverPrefab;
 
     void SetSingleton()
     {
@@ -41,6 +43,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         player.PlayerScored.AddListener(AddScore);
+        LoadNextGameLevel.Invoke(gameLevel);
         LoadSubLevel.Invoke(subLevel);
     }
 
@@ -82,9 +85,25 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
+        Instantiate(playerGameOverPrefab, player.transform.position, Quaternion.identity);
+        
+        if (gameOverSound != null)
+        {
+            AudioSource.PlayClipAtPoint(gameOverSound, Camera.main.transform.position);
+        }
+        player.gameObject.SetActive(false);
+        Invoke("CallGameOverWithDelay", 0.5f);      
+
+    }
+
+    public void CallGameOverWithDelay()
+    {
+        Time.timeScale = 0f;
         gameOver.SetActive(true);
         gameOver.GetComponent<ScoreManager>().AddScore("Player", totalScore);
         Time.timeScale = 0f;
-
     }
+
+
+    
 }

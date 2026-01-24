@@ -37,7 +37,7 @@ MonoBehaviour:
     enemyIncreaseSpeedRate: 0.25
     enemyIncreaseDamageRate: 0.25
     enemyIncreaseShootSpeedRate: 0.25
-  - PlayerSprite: {fileID: 21300000, guid: d63287a3c469b42488d6095af1980e68, type: 3}
+  - PlayerSprite: {fileID: 21300000, guid: 393e35074c52506468682fc214cc7b82, type: 3}
     enemyIncreaseSpeedRate: 0.25
     enemyIncreaseDamageRate: 0.25
     enemyIncreaseShootSpeedRate: 0.25

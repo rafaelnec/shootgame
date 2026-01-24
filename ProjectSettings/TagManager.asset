@@ -10,6 +10,8 @@ TagManager:
   - EnemyBullet
   - CollectableNuke
   - CollectableGunPowerUp
+  - FxTemporaire
+  - CollectableHealth
   layers:
   - Default
   - TransparentFX
