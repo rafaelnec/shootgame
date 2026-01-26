@@ -25,6 +25,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private int totalScore = 0;
     [SerializeField] private GameObject playerGameOverPrefab;
 
+    [Header("Pause")]
+    [SerializeField] private GameObject pausePanel;
+    private bool _isPaused = false;
+
     void SetSingleton()
     {
         if (_instance != null && _instance != this)
@@ -38,6 +42,15 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         SetSingleton();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pausePanel.SetActive(!_isPaused);
+            _isPaused = !_isPaused;
+        }
     }
 
     void Start()
@@ -103,7 +116,5 @@ public class GameController : MonoBehaviour
         gameOver.GetComponent<ScoreManager>().AddScore("Player", totalScore);
         Time.timeScale = 0f;
     }
-
-
     
 }
