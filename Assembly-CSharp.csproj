@@ -55,18 +55,21 @@
     <Compile Include="Assets\Scripts\NukeController.cs" />
     <Compile Include="Assets\Scripts\CollectableController.cs" />
     <Compile Include="Assets\Scripts\GameOverManager.cs" />
+    <Compile Include="Assets\Scripts\EnemyBigBossController.cs" />
     <Compile Include="Assets\Scripts\Collectables.cs" />
     <Compile Include="Assets\Scripts\Score\HighScore.cs" />
     <Compile Include="Assets\Scripts\CollectablesGunPowerUp.cs" />
+    <Compile Include="Assets\Scripts\CreditController.cs" />
     <Compile Include="Assets\Scripts\EnemyExploding.cs" />
-    <Compile Include="Assets\Script\CreditFloat.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\EnemyShooter.cs" />
+    <Compile Include="Assets\Scripts\EnemyBigBoss.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\CreditFloat.cs" />
+    <Compile Include="Assets\Scripts\GameWinManager.cs" />
     <Compile Include="Assets\Scripts\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\EndScoreManager.cs" />
-    <Compile Include="Assets\Script\CreditsScroll.cs" />
     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\HealthTypes.cs" />
     <Compile Include="Assets\Scripts\PauseManager.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\EnemyMachineGun.cs" />
     <Compile Include="Assets\Scripts\MenuFloat.cs" />
+    <Compile Include="Assets\Scripts\CreditsScroll.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -7,6 +7,12 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("AlphabetGame");
     }
+
+    public void CreditGame()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     public void ExitGame()
     {
         Application.Quit();

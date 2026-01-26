@@ -13,63 +13,63 @@ MonoBehaviour:
   m_Name: EnemySettings
   m_EditorClassIdentifier: Assembly-CSharp::EnemySettings
   EnemyObjects:
-  - enemySprite: {fileID: 21300000, guid: b6e5ed2b999b65f438bcf910b2ba046b, type: 3}
-    effectPrefab: {fileID: 5112403345868107898, guid: f062f6a0455d09149ae4f00afa183ecb, type: 3}
-    enemyIncreaseSpeedRate: 0.25
-    enemyIncreaseDamageRate: 0.25
-    enemyIncreaseShootSpeedRate: 0.25
+  - enemySprite: {fileID: 5088316998373936774, guid: 007d7eee9f46bcc45b00582a1aaac395, type: 3}
+    effectPrefab: {fileID: 5112403345868107898, guid: e8a993c7cd96fc5468553938df08f01b, type: 3}
+    enemySpeedRate: 0.25
+    enemyDamageRate: 0.25
+    enemyShootSpeedRate: 0.25
     enemyColor: {r: 0, g: 0, b: 0, a: 1}
   - enemySprite: {fileID: 21300000, guid: 1f6170c439af990469981cf4f8da9b10, type: 3}
     effectPrefab: {fileID: 5112403345868107898, guid: f062f6a0455d09149ae4f00afa183ecb, type: 3}
-    enemyIncreaseSpeedRate: 0.25
-    enemyIncreaseDamageRate: 0.25
-    enemyIncreaseShootSpeedRate: 0.25
+    enemySpeedRate: 0.25
+    enemyDamageRate: 0.25
+    enemyShootSpeedRate: 0.25
     enemyColor: {r: 0.8352942, g: 0.19607845, b: 0.1764706, a: 1}
   - enemySprite: {fileID: 21300000, guid: b5263cad1a642b1448e6b3f2b5d75413, type: 3}
     effectPrefab: {fileID: 5112403345868107898, guid: 388c23f7762560945b88ddebc407dcaf, type: 3}
-    enemyIncreaseSpeedRate: 0.25
-    enemyIncreaseDamageRate: 0.25
-    enemyIncreaseShootSpeedRate: 0.25
+    enemySpeedRate: 0.25
+    enemyDamageRate: 0.25
+    enemyShootSpeedRate: 0.25
     enemyColor: {r: 0.49411768, g: 0.74509805, b: 0.36862746, a: 1}
   - enemySprite: {fileID: 21300000, guid: 6191e22c802cd544f8d96c2058e61580, type: 3}
     effectPrefab: {fileID: 5112403345868107898, guid: e51ccd5173d5cde49b88ea80c8576c50, type: 3}
-    enemyIncreaseSpeedRate: 0.25
-    enemyIncreaseDamageRate: 0.25
-    enemyIncreaseShootSpeedRate: 0.25
+    enemySpeedRate: 0.25
+    enemyDamageRate: 0.25
+    enemyShootSpeedRate: 0.25
     enemyColor: {r: 0.909804, g: 0.37254903, b: 0.121568635, a: 1}
   - enemySprite: {fileID: 21300000, guid: 97abf78e75064a545be12f3c1ae73cea, type: 3}
     effectPrefab: {fileID: 5112403345868107898, guid: 8f483e486413fa841bf57c73244d2fe2, type: 3}
-    enemyIncreaseSpeedRate: 0.25
-    enemyIncreaseDamageRate: 0.25
-    enemyIncreaseShootSpeedRate: 0.25
+    enemySpeedRate: 0.25
+    enemyDamageRate: 0.25
+    enemyShootSpeedRate: 0.25
     enemyColor: {r: 0.5137255, g: 0.29803923, b: 0.83921576, a: 1}
   - enemySprite: {fileID: 21300000, guid: 8fed0e5b8c2b5964798d47b2610fc423, type: 3}
     effectPrefab: {fileID: 5112403345868107898, guid: f062f6a0455d09149ae4f00afa183ecb, type: 3}
-    enemyIncreaseSpeedRate: 0.25
-    enemyIncreaseDamageRate: 0.25
-    enemyIncreaseShootSpeedRate: 0.25
+    enemySpeedRate: 0.25
+    enemyDamageRate: 0.25
+    enemyShootSpeedRate: 0.25
     enemyColor: {r: 0.8352941, g: 0.19607843, b: 0.1764706, a: 1}
   - enemySprite: {fileID: 21300000, guid: be51e819485470e479949adcfbdb2139, type: 3}
     effectPrefab: {fileID: 5112403345868107898, guid: 388c23f7762560945b88ddebc407dcaf, type: 3}
-    enemyIncreaseSpeedRate: 0.25
-    enemyIncreaseDamageRate: 0.25
-    enemyIncreaseShootSpeedRate: 0.25
+    enemySpeedRate: 0.25
+    enemyDamageRate: 0.25
+    enemyShootSpeedRate: 0.25
     enemyColor: {r: 0.49411765, g: 0.74509805, b: 0.36862746, a: 1}
   - enemySprite: {fileID: 21300000, guid: 5783097f8a49fa34f8edc88d18d49d1c, type: 3}
     effectPrefab: {fileID: 5112403345868107898, guid: e51ccd5173d5cde49b88ea80c8576c50, type: 3}
-    enemyIncreaseSpeedRate: 0.25
-    enemyIncreaseDamageRate: 0.25
-    enemyIncreaseShootSpeedRate: 0.25
+    enemySpeedRate: 0.25
+    enemyDamageRate: 0.25
+    enemyShootSpeedRate: 0.25
     enemyColor: {r: 0.9098039, g: 0.37254903, b: 0.12156863, a: 1}
   - enemySprite: {fileID: 21300000, guid: bde9bfa4130959f43a6d186eb5833a86, type: 3}
     effectPrefab: {fileID: 5112403345868107898, guid: 8f483e486413fa841bf57c73244d2fe2, type: 3}
-    enemyIncreaseSpeedRate: 0.25
-    enemyIncreaseDamageRate: 0.25
-    enemyIncreaseShootSpeedRate: 0.25
+    enemySpeedRate: 0.25
+    enemyDamageRate: 0.25
+    enemyShootSpeedRate: 0.25
     enemyColor: {r: 0.5137255, g: 0.29803923, b: 0.8392157, a: 1}
   - enemySprite: {fileID: 21300000, guid: b6e5ed2b999b65f438bcf910b2ba046b, type: 3}
     effectPrefab: {fileID: 5112403345868107898, guid: f062f6a0455d09149ae4f00afa183ecb, type: 3}
-    enemyIncreaseSpeedRate: 0.25
-    enemyIncreaseDamageRate: 0.25
-    enemyIncreaseShootSpeedRate: 0.25
+    enemySpeedRate: 0.25
+    enemyDamageRate: 0.25
+    enemyShootSpeedRate: 0.25
     enemyColor: {r: 0.8352941, g: 0.19607843, b: 0.1764706, a: 1}

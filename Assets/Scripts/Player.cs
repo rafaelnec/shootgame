@@ -221,15 +221,10 @@ public class Player : PlayableObject
     public void UpdatePlayerSprite(int gameLevel)
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer && gameLevel < gameLevelSettings.GameData.Count)
+        if (spriteRenderer && gameLevel <= gameLevelSettings.GameData.Count)
         {
             spriteRenderer.sprite = gameLevelSettings.GameData[gameLevel-1].PlayerSprite;
         }
     }
-
-    // public void OnDestroy()
-    // {
-    //     Instantiate(effectPrefab, transform.position, Quaternion.identity);
-    // }
 
 }

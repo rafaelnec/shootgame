@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1244270622990355675}
   - component: {fileID: 4233648213390455990}
   - component: {fileID: 3613915529898039821}
+  - component: {fileID: -2979387133142354577}
   - component: {fileID: 4610572766061937213}
   m_Layer: 6
-  m_Name: EnemyMachineGun
+  m_Name: BigBossEnemyMachineGun
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,14 +190,27 @@ MonoBehaviour:
     enemyShootSpeedRate: 0.25
     enemyColor: {r: 0, g: 0, b: 0, a: 0}
   weapon: {fileID: 1929187908555219329}
-  moveSpeed: 3
-  damage: 2
-  shootTimeRate: 1
-  shootSpeed: 3
+  moveSpeed: 10
+  damage: 15
+  shootTimeRate: 0.5
+  shootSpeed: 10
   EnemyEliminated:
     m_PersistentCalls:
       m_Calls: []
   followDistance: 4
+--- !u!114 &-2979387133142354577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564749518654988775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d74bad8779ee584a87f900d8987afea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBigBossController
+  fadeDuration: 1
 --- !u!114 &4610572766061937213
 MonoBehaviour:
   m_ObjectHideFlags: 0

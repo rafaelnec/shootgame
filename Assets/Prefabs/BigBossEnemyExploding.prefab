@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1642804485128896433}
   - component: {fileID: 8967747401517207358}
   - component: {fileID: 7758504506149502798}
+  - component: {fileID: 8004034613742231464}
   - component: {fileID: 2605383570246382057}
   m_Layer: 6
-  m_Name: EnemyExploding
+  m_Name: BigBossEnemyExploding
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,13 +189,26 @@ MonoBehaviour:
     enemyShootSpeedRate: 0.25
     enemyColor: {r: 0, g: 0, b: 0, a: 0}
   weapon: {fileID: 0}
-  moveSpeed: 3
-  damage: 10
+  moveSpeed: 8
+  damage: 15
   shootTimeRate: 1
-  shootSpeed: 10
+  shootSpeed: 1
   EnemyEliminated:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8004034613742231464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9096132580188936367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d74bad8779ee584a87f900d8987afea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBigBossController
+  fadeDuration: 1
 --- !u!114 &2605383570246382057
 MonoBehaviour:
   m_ObjectHideFlags: 0

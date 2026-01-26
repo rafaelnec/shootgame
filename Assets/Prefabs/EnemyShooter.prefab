@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 1f6170c439af990469981cf4f8da9b10, type: 3}
+  m_Sprite: {fileID: 5088316998373936774, guid: 007d7eee9f46bcc45b00582a1aaac395, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -162,7 +162,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.88, y: 10.88}
+    oldSize: {x: 5.2, y: 8.22}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -292,12 +292,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ceebcce2b1843947a9ee916cf9594a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooter
+  enemyData:
+    enemySprite: {fileID: 0}
+    effectPrefab: {fileID: 0}
+    enemySpeedRate: 0.25
+    enemyDamageRate: 0.25
+    enemyShootSpeedRate: 0.25
+    enemyColor: {r: 0, g: 0, b: 0, a: 0}
   weapon: {fileID: 7880676903071625989}
   moveSpeed: 3
   damage: 3
   shootTimeRate: 3
   shootSpeed: 15
-  separationSpeed: 2
   EnemyEliminated:
     m_PersistentCalls:
       m_Calls: []
@@ -389,6 +395,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2413806693520163455, guid: 854e85e4466d84246840b048586e51b4, type: 3}
+    - target: {fileID: 8830373801878628809, guid: 6ffb779dce466184a967506585de9370, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

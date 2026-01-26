@@ -6,9 +6,9 @@ public class EnemyData
 {
     public Sprite enemySprite;
     public GameObject effectPrefab;
-    public float enemyIncreaseSpeedRate = 0.25f;
-    public float enemyIncreaseDamageRate = 0.25f;
-    public float enemyIncreaseShootSpeedRate = 0.25f;
+    public float enemySpeedRate = 0.25f;
+    public float enemyDamageRate = 0.25f;
+    public float enemyShootSpeedRate = 0.25f;
     public Color enemyColor;
 }
 

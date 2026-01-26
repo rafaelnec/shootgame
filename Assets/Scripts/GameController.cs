@@ -15,8 +15,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private int subLevel = 1;
     [SerializeField] private GameObject gameOver;
     [SerializeField] private AudioClip gameOverSound;
+    [SerializeField] private GameObject gameWin;
+    [SerializeField] private AudioClip gameWinSound;
     
     public UnityEvent<int> LoadSubLevel;
+    public UnityEvent LoadBigBossLevel;
     public UnityEvent<int> LoadNextGameLevel;
 
     [Header("Players")]
@@ -56,8 +59,10 @@ public class GameController : MonoBehaviour
     void Start()
     {
         player.PlayerScored.AddListener(AddScore);
+        Debug.Log("Game Level: " + gameLevel);
         LoadNextGameLevel.Invoke(gameLevel);
-        LoadSubLevel.Invoke(subLevel);
+        if (gameLevel < gameLevelSettings.GameData.Count) LoadSubLevel.Invoke(subLevel);
+        else LoadBigBossLevel.Invoke();
     }
 
     public void LevelListner()
@@ -66,9 +71,13 @@ public class GameController : MonoBehaviour
         if (_countToNextSubLevel == subLevel)
         {
             if(subLevel == 9) NextGameLevel();
-            subLevel = subLevel < 9 ? subLevel + 1 : 1;
-            _countToNextSubLevel = 0;
-            LoadSubLevel.Invoke(subLevel);
+            if (gameLevel < gameLevelSettings.GameData.Count) {
+                subLevel = subLevel < 9 ? subLevel + 1 : 1;
+                _countToNextSubLevel = 0;
+                LoadSubLevel.Invoke(subLevel);
+            } else {
+                LoadBigBossLevel.Invoke();
+            }
         }
         
     }
@@ -116,5 +125,24 @@ public class GameController : MonoBehaviour
         gameOver.GetComponent<ScoreManager>().AddScore("Player", totalScore);
         Time.timeScale = 0f;
     }
+
+    public void GameWin()
+    {
+        if (gameWinSound != null)
+        {
+            AudioSource.PlayClipAtPoint(gameWinSound, Camera.main.transform.position);
+        }
+        player.gameObject.SetActive(false);
+        Invoke("CallGameWinWithDelay", 0.5f);      
+
+    }
+
+    public void CallGameWinWithDelay()
+    {
+        gameWin.SetActive(true);
+        gameWin.GetComponent<ScoreManager>().AddScore("Player", totalScore);
+    }
+
+    
     
 }

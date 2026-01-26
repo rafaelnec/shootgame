@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     private static EnemyController _instance;
 
     [Header("Enemies")]
+    [SerializeField] private GameLevelSettings gameLevelSettings;
     [SerializeField] private EnemySettings enemySettings;
     [SerializeField] private List<Enemy> enemyPrefabs;   
     [SerializeField] private GameObject destructionEffectPrefab;
@@ -49,6 +50,7 @@ public class EnemyController : MonoBehaviour
 
     public void SpawEnemy(int enemyCurrentLevel)
     {
+        
         Vector2 bottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));
         Vector2 topRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.nearClipPlane));
         EnemyData enemyData = enemySettings.EnemyObjects[enemyCurrentLevel];
@@ -78,10 +80,10 @@ public class EnemyController : MonoBehaviour
 
     public void SetUpEnemyLevel(int level)
     {
-        EnemyData enemyData = enemySettings.EnemyObjects[level -1];
-        _enemyIncreaseSpeed = (level - 1) * enemyData.enemyIncreaseSpeedRate;
-        _enemyIncreaseDamage = (level - 1) * enemyData.enemyIncreaseDamageRate;
-        _enemyIncreaseShootSpeed = (level - 1) * enemyData.enemyIncreaseShootSpeedRate;
+        GameData gameData = gameLevelSettings.GameData[level -1];
+        _enemyIncreaseSpeed = (level - 1) * gameData.enemyIncreaseSpeedRate;
+        _enemyIncreaseDamage = (level - 1) * gameData.enemyIncreaseDamageRate;
+        _enemyIncreaseShootSpeed = (level - 1) * gameData.enemyIncreaseShootSpeedRate;
     }
 
 }
