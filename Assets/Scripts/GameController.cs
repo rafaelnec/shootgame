@@ -59,7 +59,6 @@ public class GameController : MonoBehaviour
     void Start()
     {
         player.PlayerScored.AddListener(AddScore);
-        Debug.Log("Game Level: " + gameLevel);
         LoadNextGameLevel.Invoke(gameLevel);
         if (gameLevel < gameLevelSettings.GameData.Count) LoadSubLevel.Invoke(subLevel);
         else LoadBigBossLevel.Invoke();

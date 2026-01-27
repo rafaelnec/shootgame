@@ -10,10 +10,22 @@ public class SceneChanger : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
+    public void ToggleInstructions(GameObject instructionsPanel)
+    {
+        if (instructionsPanel.gameObject.activeSelf == false)
+        {
+            instructionsPanel.SetActive(true);
+        }
+        else
+        {
+            instructionsPanel.SetActive(false);
+        }
+    }
+
     public void QuitGame()
     {
         // Debug.Log("Quitting game!");
-        // EditorApplication.ExitPlaymode();
+        //EditorApplication.ExitPlaymode();
         Application.Quit();
     }
 }

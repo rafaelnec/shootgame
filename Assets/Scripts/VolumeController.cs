@@ -38,7 +38,6 @@ public class VolumeController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.M))
         {
-            Debug.Log("Entrei" + AudioListener.volume);
             _volumeActive = true;
             TogleVolumePanel();
             volumeSlider.value = AudioListener.volume > 0 ? 0 : _previousVolumeSliderValue;
