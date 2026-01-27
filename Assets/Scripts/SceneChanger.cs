@@ -25,7 +25,7 @@ public class SceneChanger : MonoBehaviour
     public void QuitGame()
     {
         // Debug.Log("Quitting game!");
-        EditorApplication.ExitPlaymode();
+        //EditorApplication.ExitPlaymode();
         Application.Quit();
     }
 }
