@@ -52,6 +52,7 @@
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\KeepObjectOnScreen.cs" />
     <Compile Include="Assets\Scripts\Score\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\VolumeSliderController.cs" />
     <Compile Include="Assets\Scripts\NukeController.cs" />
     <Compile Include="Assets\Scripts\CollectableController.cs" />
     <Compile Include="Assets\Scripts\GameOverManager.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Assets\Scripts\CollectablesGunPowerUp.cs" />
     <Compile Include="Assets\Scripts\CreditController.cs" />
     <Compile Include="Assets\Scripts\EnemyExploding.cs" />
+    <Compile Include="Assets\Scripts\VolumeController.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\EnemyShooter.cs" />
