@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c41e66e2bd2cf4a825cd256b9c5fce, type: 3}
+  m_Name: HealthTypes
+  m_EditorClassIdentifier: Assembly-CSharp::HealthTypes
+  HealthObjects:
+  - healAmount: 25
+    sprite: {fileID: 2045994070260232039, guid: 4a0bac3cd044c07468485505ce8ca564, type: 3}
+  - healAmount: 50
+    sprite: {fileID: 6540464533205305539, guid: f66e0bbda8c95b045b27eb3f1dbc3f2d, type: 3}
+  - healAmount: 75
+    sprite: {fileID: -2637150370873066781, guid: 421f3e48cdcd6df428517c3bef5b09ff, type: 3}
+  - healAmount: 100
+    sprite: {fileID: 6063348287509590726, guid: 32e1b4391f4c34f459987ac2d390fc62, type: 3}

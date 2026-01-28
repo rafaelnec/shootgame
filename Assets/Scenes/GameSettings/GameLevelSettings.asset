@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1ffe78b65a525499f74888d82faf00, type: 3}
+  m_Name: GameLevelSettings
+  m_EditorClassIdentifier: Assembly-CSharp::GameLevelSettings
+  GameData:
+  - PlayerSprite: {fileID: 21300000, guid: 08713c118fe02f84abdc4a4dddc92ba2, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 03a7032fb0e71ae4fb049a09a18da41e, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: a7f1317a674b91544b2d14ad89ac6dc1, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 7134de6b81993d04b9e756ee018b1ff0, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 33d1a942cca45af40b2e397322c1c87e, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: d63287a3c469b42488d6095af1980e68, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 393e35074c52506468682fc214cc7b82, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: a66e17223405b52498c88936d74d2f42, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 22e152c63a1582140a774f9bffeb3d47, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 85f23c479115b9f4ca0feffcb5812a2b, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 7a01f2c56a41e044aa1f3a90ded34331, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: fe5286098441a484e826528a74fe883b, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: cefd56cb221bfb14d81fbc7ff99180f0, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 23b95de386c18264b96714a331c862fc, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 59e89d7c12d31454080937708f722297, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 1a2c204b1baea4e45a53c5987f2cb779, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: ea144b52dcca8464bb50f0084aa81a85, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 164b2d5c75d71bd4c804b02879df5811, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 60272a3012362d4499a9f76c0bd05def, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: b6d321af7248b34429180f1eb142774d, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 24f16951979399a48a68c4ab3ae6e29b, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 243c8bd588fb29b4e958f3d1c7b1d5fc, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 1b184693b3bf82547a0de66db2f537bf, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: 822c3dff836c12d41acfbd9191953f1e, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: e83d31a68b705b44c9e1953dc7f3f214, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
+  - PlayerSprite: {fileID: 21300000, guid: cf62595688a1269488173292fa0e722e, type: 3}
+    enemyIncreaseSpeedRate: 0.25
+    enemyIncreaseDamageRate: 0.25
+    enemyIncreaseShootSpeedRate: 0.25
